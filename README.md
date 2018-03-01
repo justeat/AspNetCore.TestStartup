@@ -11,10 +11,10 @@
 //Ensure that Startup implements : IStartup
 
 var server = new TestServer(new WebHostBuilder()
-    .UseTestStartup<Startup>(services =>
-    {
-        services.AddTransient(p => MoqSomethingService.Object);
-    }));
+                                .UseTestStartup<Startup>(services =>
+                                {
+                                    services.AddTransient(p => MoqSomethingService.Object);
+                                }));
 
 var httpClient = server.CreateClient();
 
